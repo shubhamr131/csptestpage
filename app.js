@@ -3,10 +3,11 @@ const path = require('path');
 const cookieParser = require('cookie-parser');
 const logger = require('morgan');
 const helmet = require('helmet');
-
+const cors = require('cors');
 
 
 var app = express();
+app.use(cors())
 app.use(helmet.frameguard({ action: 'SAMEORIGIN' }));
 
 app.use(logger('dev'));
